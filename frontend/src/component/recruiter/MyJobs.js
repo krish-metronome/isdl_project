@@ -56,6 +56,22 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     textTransform: "uppercase",
+    backgroundColor: theme.palette.primary.light,
+    '&:hover': {
+      backgroundColor: theme.palette.primary.light,
+    },
+  },
+  statusBlock2: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textTransform: "uppercase",
+    backgroundColor: theme.palette.secondary.light,
+    '&:hover': {
+      backgroundColor: theme.palette.secondary.light,
+    },
   },
 
   text: {
@@ -159,7 +175,7 @@ const JobTile = (props) => {
           <Grid item>
             <Typography variant="h5">{job.title}</Typography>
           </Grid>
-          <Grid item>Role: {job.jobType === "Full Time" ? 'Faculty' : 'Staff'}</Grid>
+          <Grid item>Role: {job.jobType === "Faculty" ? 'Faculty' : 'Staff'}</Grid>
           <Grid item>Salary : &#8377; {job.salary} per month</Grid>
           <Grid item>Date Of Posting: {postedOn.toLocaleDateString()}</Grid>
           <Grid item>
@@ -186,14 +202,12 @@ const JobTile = (props) => {
           <Grid item>
             <Button
               variant="contained"
-              className={classes.statusBlock}
+              color = "secondary"
+              className={classes.statusBlock2}
               onClick={() => {
                 setOpenUpdate(true);
               }}
-              style={{
-                background: "#FC7A1E",
-                color: "#fff",
-              }}
+              
             >
               Update Details
             </Button>
@@ -230,6 +244,7 @@ const JobTile = (props) => {
           <Grid container justify="center" spacing={5}>
             <Grid item>
               <Button
+                className={classes.statusBlock2}
                 variant="contained"
                 color="secondary"
                 style={{ padding: "10px 50px" }}
@@ -240,6 +255,7 @@ const JobTile = (props) => {
             </Grid>
             <Grid item>
               <Button
+                className={classes.statusBlock1}
                 variant="contained"
                 color="primary"
                 style={{ padding: "10px 50px" }}
@@ -321,8 +337,9 @@ const JobTile = (props) => {
           <Grid container justify="center" spacing={5}>
             <Grid item>
               <Button
+                className={classes.statusBlock}
                 variant="contained"
-                color="secondary"
+                color="primary"
                 style={{ padding: "10px 50px" }}
                 onClick={() => handleJobUpdate()}
               >
@@ -331,8 +348,9 @@ const JobTile = (props) => {
             </Grid>
             <Grid item>
               <Button
+                className={classes.statusBlock2}
                 variant="contained"
-                color="primary"
+                color = "secondary"
                 style={{ padding: "10px 50px" }}
                 onClick={() => handleCloseUpdate()}
               >
@@ -387,7 +405,7 @@ const FilterPopup = (props) => {
                       }}
                     />
                   }
-                  label="Full Time"
+                  label="Faculty"
                 />
               </Grid>
               <Grid item>
@@ -407,7 +425,7 @@ const FilterPopup = (props) => {
                       }}
                     />
                   }
-                  label="Part Time"
+                  label="Staff"
                 />
               </Grid>
               <Grid item>

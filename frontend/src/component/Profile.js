@@ -22,7 +22,18 @@ const useStyles = makeStyles((theme) => ({
   body: {
     height: "inherit",
   },
-  popupDialog: {
+  statusBlock: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textTransform: "uppercase",
+    backgroundColor: theme.palette.secondary.light,
+    '&:hover': {
+      backgroundColor: theme.palette.secondary.light,
+    },
+  },secondarypDialog: {
     height: "100%",
     display: "flex",
     alignItems: "center",
@@ -86,6 +97,7 @@ const MultifieldInput = (props) => {
       ))}
       <Grid item style={{ alignSelf: "center" }}>
         <Button
+          className={classes.statusBlock}
           variant="contained"
           color="secondary"
           onClick={() =>
@@ -98,7 +110,6 @@ const MultifieldInput = (props) => {
               },
             ])
           }
-          className={classes.inputBox}
         >
           Add another educational qualification
         </Button>

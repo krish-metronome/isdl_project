@@ -20,6 +20,12 @@ const useStyles = makeStyles((theme) => ({
   body: {
     height: "inherit",
   },
+  statusBlock: {
+    backgroundColor: theme.palette.primary.light,
+    '&:hover': {
+      backgroundColor: theme.palette.primary.light,
+    },
+  },
   popupDialog: {
     height: "100%",
     display: "flex",
@@ -189,6 +195,7 @@ const Profile = (props) => {
               </Grid>
             </Grid>
             <Button
+              className={classes.statusBlock}
               variant="contained"
               color="primary"
               style={{ padding: "10px 50px", marginTop: "30px" }}

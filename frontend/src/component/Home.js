@@ -33,6 +33,18 @@ const useStyles = makeStyles((theme) => ({
   body: {
     height: "inherit",
   },
+  statusBlock: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textTransform: "uppercase",
+    backgroundColor: theme.palette.primary.light,
+    '&:hover': {
+      backgroundColor: theme.palette.primary.light,
+    },
+  },
   button: {
     width: "100%",
     height: "100%",
@@ -145,7 +157,7 @@ const JobTile = (props) => {
           <Button
             variant="contained"
             color="primary"
-            className={classes.button}
+            className={classes.statusBlock}
             onClick={() => {
               setOpen(true);
             }}
@@ -183,6 +195,7 @@ const JobTile = (props) => {
             }}
           />
           <Button
+            className={classes.statusBlock}
             variant="contained"
             color="primary"
             style={{ padding: "10px 50px" }}
@@ -224,7 +237,7 @@ const FilterPopup = (props) => {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      name="Faculty"
+                      name="Full Time"
                       checked={searchOptions.jobType.Faculty}
                       onChange={(event) => {
                         setSearchOptions({

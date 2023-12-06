@@ -20,12 +20,24 @@ const useStyles = makeStyles((theme) => ({
   body: {
     height: "inherit",
   },
+  statusBlock: {
+    backgroundColor: theme.palette.primary.light,
+    '&:hover': {
+      backgroundColor: theme.palette.primary.light,
+    },
+  },
   popupDialog: {
     height: "100%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     // padding: "30px",
+    createJobButton: {
+      backgroundColor: '#a6b6f1', // Use a lighter shade of the primary color
+      '&:hover': {
+        backgroundColor: '#a6b6f1', // Maintain the same color on hover
+      },
+    },
   },
   text: {
     color: 'rgba(255, 255, 255, 0.8)', // Adjust text color
@@ -45,7 +57,7 @@ const CreateJobs = (props) => {
       .toISOString()
       .substr(0, 16),
     skillsets: [],
-    jobType: "Full Time",
+    jobType: "Faculty",
     duration: 0,
     salary: 0,
   });
@@ -79,7 +91,7 @@ const CreateJobs = (props) => {
             .toISOString()
             .substr(0, 16),
           skillsets: [],
-          jobType: "Full Time",
+          jobType: "Faculty",
           duration: 0,
           salary: 0,
         });
@@ -170,8 +182,8 @@ const CreateJobs = (props) => {
                     }}
                     fullWidth
                   >
-                    <MenuItem value="Full Time">Faculty</MenuItem>
-                    <MenuItem value="Part Time">Staff</MenuItem>
+                    <MenuItem value="Faculty">Faculty</MenuItem>
+                    <MenuItem value="Staff">Staff</MenuItem>
                   </TextField>
                 </Grid>
                 
@@ -220,7 +232,8 @@ const CreateJobs = (props) => {
               <Button
                 variant="contained"
                 color="primary"
-                style={{ padding: "10px 50px", marginTop: "30px" }}
+                className={`${classes.createJobButton} ${classes.text}${classes.statusBlock}`}
+                style={{ padding: "10px 50px", marginTop: "30px" , background: "#09BC8A",}}
                 onClick={() => handleUpdate()}
               >
                 Create Job

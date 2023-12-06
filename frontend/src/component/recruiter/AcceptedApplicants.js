@@ -39,6 +39,21 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     textTransform: "uppercase",
+    backgroundColor: theme.palette.primary.light,
+    '&:hover': {
+      backgroundColor: theme.palette.primary.light,
+    },
+  },
+  statusBlock2: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textTransform: "uppercase",
+    backgroundColor: theme.palette.secondary.light,
+    '&:hover': {primaryckgroundColor: theme.palette.secondary.light,
+    },
   },
   jobTileOuter: {
     padding: "30px",
@@ -559,7 +574,7 @@ const ApplicationTile = (props) => {
             </Typography>
           </Grid>
           <Grid item>Job Title: {application.job.title}</Grid>
-          <Grid item>Role: {application.job.jobType === "Full Time" ? 'Faculty' : 'Staff'}</Grid>
+          <Grid item>Role: {application.job.jobType === "Faculty" ? 'Faculty' : 'Staff'}</Grid>
           <Grid item>Applied On: {appliedOn.toLocaleDateString()}</Grid>
           <Grid item>
             SOP: {application.sop !== "" ? application.sop : "Not Submitted"}
@@ -585,8 +600,8 @@ const ApplicationTile = (props) => {
             {/* {buttonSet[application.status]} */}
             <Button
               variant="contained"
-              color="primary"
-              className={classes.statusBlock}
+              color="secondary"
+              className={classes.statusBlock2}
               style={{
                 background: "#09BC8A",
               }}
