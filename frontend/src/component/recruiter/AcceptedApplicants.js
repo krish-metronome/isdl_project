@@ -451,14 +451,23 @@ const ApplicationTile = (props) => {
     setOpenEndJob(false);
   };
 
+  // const colorSet = {
+  //   applied: "#3454D1",
+  //   shortlisted: "#DC851F",
+  //   accepted: "#09BC8A",
+  //   rejected: "#D1345B",
+  //   deleted: "#B49A67",
+  //   cancelled: "#FF8484",
+  //   finished: "#4EA5D9",
+  // };
   const colorSet = {
-    applied: "#3454D1",
-    shortlisted: "#DC851F",
-    accepted: "#09BC8A",
-    rejected: "#D1345B",
-    deleted: "#B49A67",
-    cancelled: "#FF8484",
-    finished: "#4EA5D9",
+    applied: "#a4c2e1",      // Subdued Blue for "applied"
+    shortlisted: "#8ed1ab",   // Subdued Green for "shortlisted"
+    accepted: "#f7d08a",      // Subdued Orange for "accepted"
+    rejected: "#e6b8b7",      // Subdued Red for "rejected"
+    deleted: "#b8c7cc",       // Subdued Grayish blue for "deleted"
+    cancelled: "#d2d7da",     // Subdued Silver for "cancelled"
+    finished: "#657780",      // Subdued Dark gray-blue for "finished"
   };
 
   const getResume = () => {

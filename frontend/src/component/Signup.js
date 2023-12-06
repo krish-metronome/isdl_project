@@ -107,7 +107,7 @@ const MultifieldInput = (props) => {
           }
           className={classes.inputBox}
         >
-          Add another institution details
+          Add another educational qualification
         </Button>
       </Grid>
     </>
