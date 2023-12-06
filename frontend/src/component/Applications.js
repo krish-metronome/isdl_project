@@ -150,7 +150,7 @@ const ApplicationTile = (props) => {
             <Typography variant="h5">{application.job.title}</Typography>
           </Grid>
           <Grid item>Posted By: {application.recruiter.name}</Grid>
-          <Grid item>Role: {application.job.jobType === "Faculty" ? 'Faculty' : 'Staff'}</Grid>
+          <Grid item>Role: {application.job.jobType === "Full Time" ? 'Faculty' : 'Staff'}</Grid>
           <Grid item>Salary : &#8377; {application.job.salary} per month</Grid>
           <Grid item>
             {application.job.skillsets.map((skill) => (

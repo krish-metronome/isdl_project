@@ -175,7 +175,7 @@ const JobTile = (props) => {
           <Grid item>
             <Typography variant="h5">{job.title}</Typography>
           </Grid>
-          <Grid item>Role: {job.jobType === "Faculty" ? 'Faculty' : 'Staff'}</Grid>
+          <Grid item>Role: {job.jobType === "Full Time" ? 'Faculty' : 'Staff'}</Grid>
           <Grid item>Salary : &#8377; {job.salary} per month</Grid>
           <Grid item>Date Of Posting: {postedOn.toLocaleDateString()}</Grid>
           <Grid item>
@@ -392,8 +392,8 @@ const FilterPopup = (props) => {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      name="Faculty"
-                      checked={searchOptions.jobType.Faculty}
+                      name="fullTime"
+                      checked={searchOptions.jobType.fullTime}
                       onChange={(event) => {
                         setSearchOptions({
                           ...searchOptions,
@@ -412,8 +412,8 @@ const FilterPopup = (props) => {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      name="Staff"
-                      checked={searchOptions.jobType.Staff}
+                      name="partTime"
+                      checked={searchOptions.jobType.partTime}
                       onChange={(event) => {
                         setSearchOptions({
                           ...searchOptions,
@@ -702,8 +702,8 @@ const MyJobs = (props) => {
   const [searchOptions, setSearchOptions] = useState({
     query: "",
     jobType: {
-      Faculty: false,
-      Staff: false,
+      fullTime: false,
+      partTime: false,
       wfh: false,
     },
     salary: [0, 100],
@@ -734,10 +734,10 @@ const MyJobs = (props) => {
     if (searchOptions.query !== "") {
       searchParams = [...searchParams, `q=${searchOptions.query}`];
     }
-    if (searchOptions.jobType.Faculty) {
+    if (searchOptions.jobType.fullTime) {
       searchParams = [...searchParams, `jobType=Full%20Time`];
     }
-    if (searchOptions.jobType.Staff) {
+    if (searchOptions.jobType.partTime) {
       searchParams = [...searchParams, `jobType=Part%20Time`];
     }
     if (searchOptions.jobType.wfh) {

@@ -237,8 +237,8 @@ const FilterPopup = (props) => {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      name="Full Time"
-                      checked={searchOptions.jobType.Faculty}
+                      name="fullTime"
+                      checked={searchOptions.jobType.fullTime}
                       onChange={(event) => {
                         setSearchOptions({
                           ...searchOptions,
@@ -257,8 +257,8 @@ const FilterPopup = (props) => {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      name="Staff"
-                      checked={searchOptions.jobType.Staff}
+                      name="partTime"
+                      checked={searchOptions.jobType.partTime}
                       onChange={(event) => {
                         setSearchOptions({
                           ...searchOptions,
@@ -299,8 +299,8 @@ const Home = (props) => {
   const [searchOptions, setSearchOptions] = useState({
     query: "",
     jobType: {
-      Faculty: false,
-      Staff: false,
+      fullTime: false,
+      partTime: false,
       wfh: false,
     },
     salary: [0, 100],
@@ -331,10 +331,10 @@ const Home = (props) => {
     if (searchOptions.query !== "") {
       searchParams = [...searchParams, `q=${searchOptions.query}`];
     }
-    if (searchOptions.jobType.Faculty) {
+    if (searchOptions.jobType.fullTime) {
       searchParams = [...searchParams, `jobType=Full%20Time`];
     }
-    if (searchOptions.jobType.Staff) {
+    if (searchOptions.jobType.partTime) {
       searchParams = [...searchParams, `jobType=Part%20Time`];
     }
     if (searchOptions.jobType.wfh) {
