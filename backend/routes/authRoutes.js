@@ -9,17 +9,7 @@ const Recruiter = require("../db/Recruiter");
 
 const router = express.Router();
 
-router.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://isdl-project-frontend.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.header('Access-Control-Allow-Credentials', true);
-  if (req.method === 'OPTIONS') {
-    res.status(204).end();
-  } else {
-    next();
-  }
-});
+
 
 router.post("/signup", (req, res) => {
   const data = req.body;
