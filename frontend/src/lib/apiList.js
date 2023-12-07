@@ -1,6 +1,5 @@
 //export const server = "http://localhost:4444";
-export const server = "/api/proxy";
-
+export const server = "./api/proxy";
 
 const apiList = {
   login: `${server}/auth/login`,
