@@ -34,7 +34,11 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // Setting up middlewares
-app.use(cors());
+app.use(cors({
+  origin: 'https://isdl-project-frontend.vercel.app', // Replace with your frontend's URL
+  methods: 'POST', // Allow only POST requests
+  allowedHeaders: 'Content-Type', // Allow only the Content-Type header
+}));
 app.use(express.json());
 app.use(passportConfig.initialize());
 
