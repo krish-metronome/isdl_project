@@ -39,6 +39,7 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow multiple HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow multiple headers
   credentials: true, // Enable credentials (if you're using cookies, sessions, or authentication)
+  optionsSuccessStatus: 204,
 }));
 app.use(express.json());
 app.use(passportConfig.initialize());
